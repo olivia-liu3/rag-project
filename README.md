@@ -50,3 +50,20 @@ This project will be built incrementally each week.
 ### Questions
 - what does "str(e)" in the except section of test_gemini() mean
 - does return work as print? why is everything after return displayed? 
+
+# Week 6
+### Description of my multi-step flow
+- Makes Gemini first write an outline for a research paper 
+- Using the outline from the first step, compose the research paper
+
+### What each step does
+- the line "outline_response = model.generate_content("make an outline for a 1 page research paper on the topic of AI and ethics")" creates the outline
+- the next line "response = model.generate_content(f"write a 1 page research paper on the topic of AI and ethics based on the following outline: {outline_response.text}")" creates the paper
+- the lines "except Exception as e:" and "return {"error": str(e)}" makes Gemini display that an error has occurred and why it has occurred
+
+### Why steps are separated
+- the seperation organizes the LLM's reasoning 
+- this ensures that the essential first step (making the outline) is completed and cannot be skipped 
+
+### Any challenges or open questions
+- some words in the paper are sounded by forward slashes and quotations for no reason, how could I get rid of that?
