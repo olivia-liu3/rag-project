@@ -22,7 +22,8 @@ def health_check():
 def test_gemini():
     try:
         model = genai.GenerativeModel("gemini-3.5-flash")
-        response = model.generate_content("Explain why the sky is blue in one paragraph.")
+        outline_response = model.generate_content("make an outline for a 1 page research paper on the topic of AI and ethics")
+        response = model.generate_content(f"write a 1 page research paper on the topic of AI and ethics based on the following outline: {outline_response.text}")   
         return {"response": response.text}
     except Exception as e:
         return {"error": str(e)}
