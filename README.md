@@ -67,3 +67,17 @@ This project will be built incrementally each week.
 
 ### Any challenges or open questions
 - some words in the paper are sounded by forward slashes and quotations for no reason, how could I get rid of that?
+
+# Week 7 
+### Why does input validation exist
+- filters user input by flagging prrompts that are empty, too short, or too long
+- helps to ensure quality AI response
+
+### Why does output validation exist
+- prevents general errors from AI response to reach user
+- raises error if response is empty or too short
+
+### Why is a second AI model used to review responses
+- a second AI model is given the role to quality control the response and less likely to make the same mistakes as the first AI 
+- fixes bad responses. rewritten responses given to user
+- allows good responses to reach user
